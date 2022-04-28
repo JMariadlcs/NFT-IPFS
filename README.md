@@ -12,6 +12,18 @@ npm init -y
 npm install --save-dev hardhat
 npx hardhat
 ```
+- Add .gitignore file
+```bash
+node_modules
+.env
+coverage
+coverage.json
+typechain
+
+#Hardhat files
+cache
+artifacts
+```
 
 - Install dependencies:
 ```bash
