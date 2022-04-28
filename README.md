@@ -1,9 +1,11 @@
 # NFT-IPFS
 
+This is a random NFT collection creation from a Chainlink Hackaton Spring 2022 workshop which is implemented by using Solidity and Hardhat.
+
 ## Objetives
-1. Create NFT Collection
-2. Each NFT has a "rarity"
-3. Users pay for minting random NFTs
+1. Create NFT Collection ✅
+2. Each NFT has a "rarity" ✅
+3. Users pay for minting random NFTs ✅
 
 ## Requirements for creating similar projects from scratch
 - Start hardhat project:
@@ -12,7 +14,7 @@ npm init -y
 npm install --save-dev hardhat
 npx hardhat
 ```
-- Add .gitignore file
+- Add .gitignore file containing:
 ```bash
 node_modules
 .env
