@@ -1,0 +1,23 @@
+{
+  "name": "nft-ipfs",
+  "version": "1.0.0",
+  "description": "## Objetives 1. Create NFT Collection 2. Each NFT has a \"rarity\" 3. Users pay for minting random NFTs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JMariadlcs/NFT-IPFS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JMariadlcs/NFT-IPFS/issues"
+  },
+  "homepage": "https://github.com/JMariadlcs/NFT-IPFS#readme",
+  "devDependencies": {
+    "hardhat": "^2.9.3"
+  }
+}
