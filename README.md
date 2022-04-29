@@ -44,8 +44,13 @@ yarn add --dev @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers ethers @nomic
 ```bash
 npm install @chainlink/contracts
 ```
-````
+```bash
 npm install dotenv --save
+```
+## How to deploy
+- Rinkeby network:
+```bash
+npx hardhat deploy --network rinkeby 
 ```
 
 ## Resources
