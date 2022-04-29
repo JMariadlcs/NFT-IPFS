@@ -67,4 +67,4 @@ yarn hardhat deploy --network rinkeby
 - [OpenZeppeling github](https://github.com/OpenZeppelin/openzeppelin-contracts): OpenZeppeling github
 - [Chainlink VRF](https://docs.chain.link/docs/get-a-random-number/): NECESARY for getting an actually random number
 - [Chainlink VRF contract addresses](https://docs.chain.link/docs/vrf-contracts/): Smart Contract addresses for Chainlink VRF (VRFCoordinator and Key Hash)
-- [Chainlink VRF subscription](https://vrf.chain.link): Needed to create subscriptionId for using Chainlink VRF - Create subscription - add funds - get 'ID'
+- [Chainlink VRF subscription](https://vrf.chain.link): Needed to create subscriptionId for using Chainlink VRF - Create subscription - add funds - get 'ID' - add deployed Smart Contract address as consumer
