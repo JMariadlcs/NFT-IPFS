@@ -4,6 +4,14 @@ This is a random NFT collection creation from a Chainlink Hackaton Spring 2022 w
 
 NOTICE: we are working with Chainlink VRF V2 which is not still implemented on Polygon Network.
 
+<br/>
+<p align="center">
+<img src="./images/pug.png" width="225" alt="NFT Pug">
+<img src="./images/shiba-inu.png" width="225" alt="NFT Shiba">
+<img src="./images/st-bernard.png" width="225" alt="NFT St.Bernard">
+</p>
+<br/>
+
 ## Objetives
 1. Create NFT Collection ✅
 2. Each NFT has a "rarity" ✅
