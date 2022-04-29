@@ -51,7 +51,7 @@ npm install @chainlink/contracts
 npm install dotenv --save
 ```
 
-## How to deploy
+How to deploy
 - Rinkeby network:
 ```bash
 npx hardhat deploy --network rinkeby 
