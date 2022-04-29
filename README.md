@@ -63,7 +63,7 @@ yarn hardhat deploy --network rinkeby
 
 - Mint:
 ```bash
-yarn hardhat deploy --tags mint --network rinkeby
+npm hardhat deploy --tags mint --network rinkeby
 ```
 
 
