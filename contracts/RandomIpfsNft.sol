@@ -11,18 +11,18 @@ contract RandomIpfsNft is ERC721URIStorage, VRFConsumerBaseV2 { // To inherit fu
     VRFCoordinatorV2Interface immutable i_vrfCoordinator; // coordinator for working with Chainlink VRF 
     //|| i_ indicate inmutable variable (require low gas)
 
-    bytes32 immutable i_gasLane;
-    uint64 immutable i_subscriptionId;
-    uint32 immutable callbackGasLimit;
+    bytes32 public immutable i_gasLane;
+    uint64 public immutable i_subscriptionId;
+    uint32 public immutable i_callbackGasLimit;
 
-    uint16 constant REQUEST_CONFIRMATIONS = 3; // how many blocks are needed to be considered complete
-    uint32 constant NUM_WORDS = 1; // how many random numbers we want to get
-    uint256 constant MAX_CHANCE_VALUE = 100; 
+    uint16 public constant REQUEST_CONFIRMATIONS = 3; // how many blocks are needed to be considered complete
+    uint32 public constant NUM_WORDS = 1; // how many random numbers we want to get
+    uint256 public constant MAX_CHANCE_VALUE = 100; 
 
-    mapping(uint256 => address) s_requestIdToSender;
+    mapping(uint256 => address) public s_requestIdToSender;
     string[3] s_dogTokenUris; // Uris containing info from dog JSONs
 
-    uint256 s_tokenCounter;
+    uint256 public s_tokenCounter;
 
     /**
     * @dev 
@@ -30,11 +30,12 @@ contract RandomIpfsNft is ERC721URIStorage, VRFConsumerBaseV2 { // To inherit fu
     * so we need to define each parameter that function uses in our contract constructor
     */
     constructor(address vrfCoordinatorV2, bytes32 gasLane, uint64 subscriptionId, uint32 callbackGasLimit, string[3] memory dogTokenUris) ERC721("Random IPFS NFT", "RIN") VRFConsumerBaseV2(vrfCoordinatorV2) {
-        i_vrfCoordinator = VRFCoodinatorV2Interface(vrfCoordinatorV2); // interface(address) -> contract, so i_vrfCoordinator is now a contract (we can interat with it)
+        i_vrfCoordinator = VRFCoordinatorV2Interface(vrfCoordinatorV2); // interface(address) -> contract, so i_vrfCoordinator is now a contract (we can interat with it)
         i_gasLane = gasLane; // keyHash -> how much gas is max to get Random Number (price per gas)
         i_subscriptionId = subscriptionId;
         i_callbackGasLimit = callbackGasLimit; // when Chainlink node respond with the random number it uses gas - max gas amount
         s_tokenCounter = 0;
+        s_dogTokenUris = dogTokenUris;
     }
 
     /// @notice Mint a random puppy (get random number) -> use Chainlink VRF -> call requestRandomWords() function
@@ -48,7 +49,7 @@ contract RandomIpfsNft is ERC721URIStorage, VRFConsumerBaseV2 { // To inherit fu
     * @dev 
     * - We are using _safeMint() function from OpenZeppelin
     */
-    function fulfillRandomWords(uint256 requestId, uint256[] memory randomWords) interal override {
+    function fulfillRandomWords(uint256 requestId, uint256[] memory randomWords) internal override {
         // owner of the dog
         address dogOwner = s_requestIdToSender[requestId];
 
