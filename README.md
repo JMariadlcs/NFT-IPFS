@@ -47,6 +47,7 @@ npm install @chainlink/contracts
 ```bash
 npm install dotenv --save
 ```
+
 ## How to deploy
 - Rinkeby network:
 ```bash
