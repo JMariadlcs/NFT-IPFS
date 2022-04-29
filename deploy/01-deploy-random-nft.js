@@ -1,10 +1,11 @@
 const { args } = require("commander")
+const { BigNumber } = require("ethers")
 const { network, ethers } = require("hardhat")
 
 module.exports = async function(hre) {
-    const { getNamedACcounts, deployements } = hre
-    const { deployer } = await getNamedACcounts()
-    const { deploy, log } = deployements
+    const { getNamedACcounts, deployments } = hre
+    const { deployer } = await getNamedAccounts()
+    const { deploy, log } = deployments
     const chainId = network.config.chainId
     const FUND_AMOUNT = "1000000000000000000000"
 
