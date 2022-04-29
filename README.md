@@ -1,6 +1,6 @@
-# NFT-IPFS
+# NFT with IPFS and CHAINLINK VRF
 
-This is a random NFT collection creation from a Chainlink Hackaton Spring 2022 workshop which is implemented by using Solidity and Hardhat.
+This is a random NFT collection creation from a Chainlink Hackaton Spring 2022 workshop which is implemented by using IPFS for decentralize images storage and Chainlink VRF for make it actually random.
 
 NOTICE: we are working with Chainlink VRF V2 which is not still implemented on Polygon Network.
 
