@@ -61,6 +61,11 @@ or
 yarn hardhat deploy --network rinkeby
 ```
 
+- Mint:
+```bash
+yarn hardhat deploy --tags mint --network rinkeby
+```
+
 
 ## Resources
 - [hardhat-nft-fcc](https://github.com/PatrickAlphaC/hardhat-nft-fcc): Patrick's repo for NFTs

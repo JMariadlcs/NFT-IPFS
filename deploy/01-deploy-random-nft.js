@@ -30,7 +30,7 @@ module.exports = async function(hre) {
 
     } else { // use the real one (testnet/mainnet)
         vrfCoordinatorV2Address = "0x6168499c0cFfCaCD319c818142124B7A15E857ab" // could be imported from another file
-        subscriptionId = "3587" // create vrf subscription and add funds
+        subscriptionId = "3595" // create vrf subscription and add funds
     }
 
 
