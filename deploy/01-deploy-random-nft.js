@@ -41,15 +41,16 @@ module.exports = async function(hre) {
         "0xd89b2bf150e3b9e13446986e571fb9cab24b13cea0a43ea20a6049a85cc807cc", // keyHash
         subscriptionId,
         "500000",
-        // list of dogs
-        tokenUris,
+        tokenUris, // list of dogs
     ]
 
-    const RandomIpfsNft = await deploy("RandomIpfsNft", {
+    const randomIpfsNft = await deploy("RandomIpfsNft", {
         from: deployer,
         args: args, // defined above
         log: true,
     })
 
-    console.log(RandomIpfsNft.address)
+    console.log(randomIpfsNft.address)
 }
+
+module.exports.tags = ["all", "randomipfs", "main"]

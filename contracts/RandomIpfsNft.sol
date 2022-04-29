@@ -20,7 +20,7 @@ contract RandomIpfsNft is ERC721URIStorage, VRFConsumerBaseV2 { // To inherit fu
     uint256 public constant MAX_CHANCE_VALUE = 100; 
 
     mapping(uint256 => address) public s_requestIdToSender;
-    string[3] s_dogTokenUris; // Uris containing info from dog JSONs
+    string[3] public s_dogTokenUris; // Uris containing info from dog JSONs
 
     uint256 public s_tokenCounter;
 
