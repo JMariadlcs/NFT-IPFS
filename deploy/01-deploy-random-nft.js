@@ -22,7 +22,7 @@ module.exports = async function(hre) {
     let vrfCoordinatorV2Address, subscriptionId
     if (chainId = 31337) { // local one | MOCKED NETWORK with MOCKED VRFCOORDINATOR
         // create a fake chainlink VRF node
-        const vrfCoordinatorV2Mock = await ethers.getContractAt("VRFCoordinatorV2Mock")
+        const vrfCoordinatorV2Mock = await ethers.getContract("VRFCoordinatorV2Mock")
         vrfCoordinatorV2Address = vrfCoordinatorV2Mock.address // asign the deployed address to vrfCoordinatorV2Address
         const tx = await vrfCoordinatorV2Mock.createSubscription() // needed to work with vrfCoordinator from Chainlink
         const txReceipt = await tx.wait(1) // wait 1 block
@@ -34,7 +34,7 @@ module.exports = async function(hre) {
         subscriptionId = "3587" // create vrf subscription and add funds
     }
 
-    
+
      //  ---------SECOND: DEPLOY RANDOMIPFSNFT---------
 
     args = [ // args of RandomIpfsNft.sol constructor
@@ -51,4 +51,6 @@ module.exports = async function(hre) {
         args: args, // defined above
         log: true,
     })
+
+    console.log(RandomIpfsNft.address)
 }

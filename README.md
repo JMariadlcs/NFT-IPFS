@@ -44,6 +44,9 @@ yarn add --dev @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers ethers @nomic
 ```bash
 npm install @chainlink/contracts
 ```
+````
+npm install dotenv --save
+```
 
 ## Resources
 - [hardhat-nft-fcc](https://github.com/PatrickAlphaC/hardhat-nft-fcc): Patrick's repo for NFTs
