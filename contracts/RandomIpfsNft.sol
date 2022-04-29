@@ -20,6 +20,7 @@ contract RandomIpfsNft is ERC721URIStorage, VRFConsumerBaseV2 { // To inherit fu
     uint256 constant MAX_CHANCE_VALUE = 100; 
 
     mapping(uint256 => address) s_requestIdToSender;
+    string[3] s_dogTokenUris; // Uris containing info from dog JSONs
 
     uint256 s_tokenCounter;
 
@@ -28,7 +29,7 @@ contract RandomIpfsNft is ERC721URIStorage, VRFConsumerBaseV2 { // To inherit fu
     * - We are going to use VRFrequestRandomWords() function from Chainlink VRF
     * so we need to define each parameter that function uses in our contract constructor
     */
-    constructor(address vrfCoordinatorV2, bytes32 gasLane, uint64 subscriptionId, uint32 callbackGasLimit) ERC721("Random IPFS NFT", "RIN") VRFConsumerBaseV2(vrfCoordinatorV2) {
+    constructor(address vrfCoordinatorV2, bytes32 gasLane, uint64 subscriptionId, uint32 callbackGasLimit, string[3] memory dogTokenUris) ERC721("Random IPFS NFT", "RIN") VRFConsumerBaseV2(vrfCoordinatorV2) {
         i_vrfCoordinator = VRFCoodinatorV2Interface(vrfCoordinatorV2); // interface(address) -> contract, so i_vrfCoordinator is now a contract (we can interat with it)
         i_gasLane = gasLane; // keyHash -> how much gas is max to get Random Number (price per gas)
         i_subscriptionId = subscriptionId;
@@ -61,11 +62,15 @@ contract RandomIpfsNft is ERC721URIStorage, VRFConsumerBaseV2 { // To inherit fu
         // mint NFT
         _safeMint(dogOwner, newTokenId);
 
-        // set tokenURI
+        // set tokenURI | params -> tokenId, tokenURI
+        _setTokenURI(newTokenId, s_dogTokenUris[breed]);
         
     }
     
-    
+    function getChanceArray() public pure returns(uint256[3] memory) {
+        return [10, 30, MAX_CHANCE_VALUE];
+    }
+
     /**
     * @notice Function to decide puppy breed randomly
     * @dev 
@@ -73,10 +78,6 @@ contract RandomIpfsNft is ERC721URIStorage, VRFConsumerBaseV2 { // To inherit fu
     * - 10-29: pug
     * - 30 - 99: shiba 
     */
-    function getChanceArray() public pure returns(uint256[3] memory) {
-        return [10, 30, MAX_CHANCE_VALUE];
-    }
-
     function getBreedFromModdedRng(uint256 moddedRng) public pure returns (uint256) {
         uint256 cumulativeSum = 0;
         uint256[3] memory chanceArray = getChanceArray();
