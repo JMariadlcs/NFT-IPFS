@@ -2,6 +2,8 @@
 
 This is a random NFT collection creation from a Chainlink Hackaton Spring 2022 workshop which is implemented by using Solidity and Hardhat.
 
+NOTICE: we are working with Chainlink VRF V2 which is not still implemented on Polygon Network.
+
 ## Objetives
 1. Create NFT Collection ✅
 2. Each NFT has a "rarity" ✅
