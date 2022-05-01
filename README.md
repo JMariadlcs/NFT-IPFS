@@ -70,7 +70,7 @@ yarn hardhat deploy --tags mint --network rinkeby
 ```
 
 ## Add Chainlink VRF Consumers
-In order that our Contract works correctly with Chainlink VRF we need to add our Smart Contract Address as VRF consumer. To do so:
+IMPORTAR: In order that our Contract works correctly with Chainlink VRF we need to add our Smart Contract Address as VRF consumer. To do so:
 1. Go to [Chainlink VRF](https://vrf.chain.link)
 2. Create a 'Subscription' or use an existing one
 3. Add 'consumer': Smart Contract Address
