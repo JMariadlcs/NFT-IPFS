@@ -64,6 +64,10 @@ yarn hardhat deploy --network rinkeby
 ```bash
 npm hardhat deploy --tags mint --network rinkeby
 ```
+or 
+```bash
+yarn hardhat deploy --tags mint --network rinkeby
+```
 
 
 ## Resources
