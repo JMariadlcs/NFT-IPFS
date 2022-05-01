@@ -4,6 +4,8 @@ This is a random NFT collection creation from a Chainlink Hackaton Spring 2022 w
 
 NOTICE: we are working with Chainlink VRF V2 which is not still implemented on Polygon Network.
 
+The workshop followed to complete this repo is [this one](https://www.youtube.com/watch?v=xTnDTWHsbIs&t=5879s).
+
 <br/>
 <p align="center">
 <img src="./images/pug.png" width="225" alt="NFT Pug">
@@ -75,7 +77,6 @@ IMPORTAR: In order that our Contract works correctly with Chainlink VRF we need 
 2. Create a 'Subscription' or use an existing one
 3. Add 'consumer': Smart Contract Address
 NOTICE: check that Subscription has enough funds (LINK)
-
 
 ## Resources
 - [hardhat-nft-fcc](https://github.com/PatrickAlphaC/hardhat-nft-fcc): Patrick's repo for NFTs
